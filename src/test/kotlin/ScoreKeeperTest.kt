@@ -17,6 +17,10 @@ class ScoreKeeperTest {
 
         scoreKeeper.scoreTeamA1()
 
-        assertThat(scoreKeeper.getScore()).isEqualTo("001:000")
+        assertScoreIs(scoreKeeper, "001:000")
+    }
+
+    private fun assertScoreIs(scoreKeeper: ScoreKeeper, expected: String) {
+        assertThat(scoreKeeper.getScore()).isEqualTo(expected)
     }
 }
