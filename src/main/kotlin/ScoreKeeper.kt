@@ -5,6 +5,7 @@ class ScoreKeeper {
 
     fun scoreTeamA1() {
         score = "001:000"
+
     }
 
     fun scoreTeamA2() {
@@ -15,9 +16,18 @@ class ScoreKeeper {
         score = "003:000"
     }
 
-    fun scoreTeamB1() {}
-    fun scoreTeamB2() {}
-    fun scoreTeamB3() {}
+    fun scoreTeamB1() {
+        score = "000:001"
+    }
+
+    fun scoreTeamB2() {
+        score = "000:002"
+    }
+
+    fun scoreTeamB3() {
+        score = "000:003"
+    }
+
     fun getScore(): String {
         return score
     }
