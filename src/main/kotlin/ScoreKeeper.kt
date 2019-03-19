@@ -3,8 +3,15 @@ package com.example.kata.scorekeeper
 class ScoreKeeper {
     private lateinit var score: String
 
+    private var scaffold: Boolean = false
+
     fun scoreTeamA1() {
-        score = "001:000"
+        if (scaffold) {
+            score = "002:000"
+        } else {
+            score = "001:000"
+            scaffold = true
+        }
     }
 
     fun scoreTeamA2() {
