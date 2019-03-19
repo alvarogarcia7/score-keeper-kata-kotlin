@@ -24,9 +24,10 @@ class ScoreKeeperTest {
     fun `team A can score multiple times`() {
 
         scoreKeeper.scoreTeamA1()
-        scoreKeeper.scoreTeamA1()
+        scoreKeeper.scoreTeamA2()
+        scoreKeeper.scoreTeamA3()
 
-        assertScoreIs(scoreKeeper, "002:000")
+        assertScoreIs(scoreKeeper, "006:000")
     }
 
     @Test
