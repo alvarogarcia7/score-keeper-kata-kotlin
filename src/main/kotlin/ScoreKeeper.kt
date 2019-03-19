@@ -22,11 +22,11 @@ class ScoreKeeper {
     }
 
     fun scoreTeamB2() {
-        scoreB = 2
+        scoreB += 2
     }
 
     fun scoreTeamB3() {
-        scoreB = 3
+        scoreB += 3
     }
 
     fun getScore(): String {
