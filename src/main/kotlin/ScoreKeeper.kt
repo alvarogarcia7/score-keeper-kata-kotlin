@@ -8,12 +8,7 @@ class ScoreKeeper {
     private var scoreB: Int = 0
 
     fun scoreTeamA1() {
-        if (scaffold) {
-            scoreA = 2
-        } else {
-            scoreA = 1
-            scaffold = true
-        }
+        scoreA += 1
     }
 
     fun scoreTeamA2() {
