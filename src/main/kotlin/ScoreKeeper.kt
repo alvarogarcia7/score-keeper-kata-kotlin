@@ -18,7 +18,7 @@ class ScoreKeeper {
     }
 
     fun scoreTeamB1() {
-        scoreB = 1
+        scoreB += 1
     }
 
     fun scoreTeamB2() {
