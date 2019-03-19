@@ -5,12 +5,12 @@ class ScoreKeeper {
     val teamA = Scoreable(0)
     val teamB = Scoreable(0)
 
-    class Scoreable {
+    class Scoreable(i: Int) {
         private data class Score(val points: Int)
 
         private var score: Score
 
-        constructor(i: Int) {
+        init {
             score = Score(i)
         }
 
