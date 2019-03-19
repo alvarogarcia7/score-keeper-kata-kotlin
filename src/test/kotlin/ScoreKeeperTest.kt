@@ -25,8 +25,9 @@ class ScoreKeeperTest {
 
         scoreKeeper.scoreTeamA1()
         scoreKeeper.scoreTeamA1()
+        scoreKeeper.scoreTeamA1()
 
-        assertScoreIs(scoreKeeper, "002:000")
+        assertScoreIs(scoreKeeper, "003:000")
     }
 
     @Test
