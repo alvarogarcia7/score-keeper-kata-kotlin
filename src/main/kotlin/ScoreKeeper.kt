@@ -2,8 +2,6 @@ package com.example.kata.scorekeeper
 
 class ScoreKeeper {
 
-    private var scaffold: Boolean = false
-
     private var scoreA: Int = 0
     private var scoreB: Int = 0
 
