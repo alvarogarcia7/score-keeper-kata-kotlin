@@ -2,31 +2,58 @@ package com.example.kata.scorekeeper
 
 class ScoreKeeper {
 
-    private var scoreA: Int = 0
-    private var scoreB: Int = 0
+    val teamA = Scoreable(0)
+    val teamB = Scoreable(0)
+
+    class Scoreable {
+        private data class Score(val points: Int)
+
+        private var score: Score
+
+        constructor(i: Int) {
+            score = Score(i)
+        }
+
+        fun one() {
+            score = score.copy(points = score.points + 1)
+        }
+
+        fun two() {
+            score = score.copy(points = score.points + 2)
+        }
+
+        fun three() {
+            score = score.copy(points = score.points + 3)
+        }
+
+        fun getScore(): Int {
+            return score.points
+        }
+
+    }
 
     fun scoreTeamA1() {
-        scoreA += 1
+        teamA.one()
     }
 
     fun scoreTeamA2() {
-        scoreA += 2
+        teamA.two()
     }
 
     fun scoreTeamA3() {
-        scoreA += 3
+        teamA.three()
     }
 
     fun scoreTeamB1() {
-        scoreB += 1
+        teamB.one()
     }
 
     fun scoreTeamB2() {
-        scoreB += 2
+        teamB.two()
     }
 
     fun scoreTeamB3() {
-        scoreB += 3
+        teamB.three()
     }
 
     fun getScore(): String {
@@ -34,6 +61,6 @@ class ScoreKeeper {
     }
 
     private fun formatScore(): String {
-        return String.format("%03d:%03d", scoreA, scoreB)
+        return String.format("%03d:%03d", teamA.getScore(), teamB.getScore())
     }
 }
