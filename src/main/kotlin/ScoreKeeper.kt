@@ -7,7 +7,9 @@ class ScoreKeeper {
         score = "001:000"
     }
 
-    fun scoreTeamA2() {}
+    fun scoreTeamA2() {
+        score = "002:000"
+    }
     fun scoreTeamA3() {}
     fun scoreTeamB1() {}
     fun scoreTeamB2() {}
