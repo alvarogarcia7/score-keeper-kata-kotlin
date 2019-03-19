@@ -21,6 +21,15 @@ class ScoreKeeperTest {
     }
 
     @Test
+    fun `team A can score multiple times`() {
+
+        scoreKeeper.scoreTeamA1()
+        scoreKeeper.scoreTeamA1()
+
+        assertScoreIs(scoreKeeper, "002:000")
+    }
+
+    @Test
     fun `team A scores a double point`() {
 
         scoreKeeper.scoreTeamA2()

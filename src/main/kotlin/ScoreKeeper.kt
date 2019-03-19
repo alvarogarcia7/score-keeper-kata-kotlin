@@ -5,7 +5,6 @@ class ScoreKeeper {
 
     fun scoreTeamA1() {
         score = "001:000"
-
     }
 
     fun scoreTeamA2() {
