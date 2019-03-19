@@ -20,6 +20,14 @@ class ScoreKeeperTest {
         assertScoreIs(scoreKeeper, "001:000")
     }
 
+    @Test
+    fun `team A scores a double point`() {
+
+        scoreKeeper.scoreTeamA2()
+
+        assertScoreIs(scoreKeeper, "002:000")
+    }
+
     private fun assertScoreIs(scoreKeeper: ScoreKeeper, expected: String) {
         assertThat(scoreKeeper.getScore()).isEqualTo(expected)
     }
