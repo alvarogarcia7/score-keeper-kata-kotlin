@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="com.example.boilerplate.boilerplate.main" target="11" />
+      <module name="com.example.boilerplate.boilerplate.test" target="11" />
+      <module name="com.example.example.boilerplate.main" target="11" />
+      <module name="com.example.example.boilerplate.test" target="11" />
+      <module name="com.example.example.score-keeper-kata.main" target="11" />
+      <module name="com.example.example.score-keeper-kata.test" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
