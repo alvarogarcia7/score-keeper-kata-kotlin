@@ -4,12 +4,12 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 import org.junit.Test
 
-class ScoreKeeperTest {
+class ScoreKeeperBehaviourTest {
 
     lateinit var scoreKeeper: ScoreKeeper
     @Before
     fun setUp() {
-        scoreKeeper = ScoreKeeper()
+        scoreKeeper = ScoreKeeper.aNew()
     }
 
     @Test
