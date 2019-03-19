@@ -10,11 +10,11 @@ class ScoreKeeper {
     }
 
     fun scoreTeamA2() {
-        scoreA = 2
+        scoreA += 2
     }
 
     fun scoreTeamA3() {
-        scoreA = 3
+        scoreA += 3
     }
 
     fun scoreTeamB1() {
