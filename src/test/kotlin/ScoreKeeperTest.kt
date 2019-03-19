@@ -1,6 +1,6 @@
 package com.example.kata.scorekeeper
 
-import com.nhaarman.mockito_kotlin.spy
+import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyZeroInteractions
 import org.assertj.core.api.Assertions.assertThat
@@ -8,20 +8,20 @@ import org.junit.Before
 import org.junit.Test
 
 class ScoreKeeperTest {
-    private var teamA: ScoreKeeper.Scoreable = ScoreKeeper.Scoreable(0)
-    private var teamB: ScoreKeeper.Scoreable = ScoreKeeper.Scoreable(0)
-    private var scoreKeeper: ScoreKeeper = ScoreKeeper.aNew()
+    private lateinit var teamA: ScoreKeeper.Scoreable
+    private lateinit var teamB: ScoreKeeper.Scoreable
+    private lateinit var scoreKeeper: ScoreKeeper
 
     @Before
     fun `set up`() {
-        teamA = spy(ScoreKeeper.Scoreable(0))
-        teamB = spy(ScoreKeeper.Scoreable(0))
+        teamA = mock()
+        teamB = mock()
         scoreKeeper = ScoreKeeper.using(teamA, teamB)
     }
 
     @Test
     fun `formatting of the scores`() {
-        val scoreKeeper = ScoreKeeper.using(ScoreKeeper.Scoreable(10), ScoreKeeper.Scoreable(6))
+        val scoreKeeper = ScoreKeeper.using(ScoreKeeper.Score(10), ScoreKeeper.Score(6))
 
         assertThat(scoreKeeper.getScore()).isEqualTo("010:006")
     }

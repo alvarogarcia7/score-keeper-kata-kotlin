@@ -1,10 +1,10 @@
 package com.example.kata.scorekeeper
 
-open class ScoreKeeper private constructor(val teamA: Scoreable = Scoreable(0), val teamB: Scoreable = Scoreable(0)) {
+open class ScoreKeeper private constructor(val teamA: Scoreable, val teamB: Scoreable) {
 
     companion object {
         fun aNew(): ScoreKeeper {
-            return ScoreKeeper()
+            return ScoreKeeper(Score(0), Score(0))
         }
 
         fun using(teamA: Scoreable, teamB: Scoreable): ScoreKeeper {
@@ -12,31 +12,38 @@ open class ScoreKeeper private constructor(val teamA: Scoreable = Scoreable(0), 
         }
     }
 
-    open class Scoreable(i: Int) {
-        private data class Score(val points: Int)
+    class Score(i: Int) : Scoreable {
+        private data class ScoreVO(val points: Int)
 
-        private var score: Score
+        private var score: ScoreVO
 
         init {
-            score = Score(i)
+            score = ScoreVO(i)
         }
 
-        open fun one() {
+        override fun one() {
             score = score.copy(points = score.points + 1)
         }
 
-        open fun two() {
+        override fun two() {
             score = score.copy(points = score.points + 2)
         }
 
-        open fun three() {
+        override fun three() {
             score = score.copy(points = score.points + 3)
         }
 
-        fun getScore(): Int {
+        override fun getScore(): Int {
             return score.points
         }
 
+    }
+
+    interface Scoreable {
+        fun one()
+        fun two()
+        fun three()
+        fun getScore(): Int
     }
 
     fun scoreTeamA1() {
