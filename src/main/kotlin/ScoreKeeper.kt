@@ -45,7 +45,7 @@ class ScoreKeeper {
     }
 
     fun getScore(): String {
-        if (formatScore().equals(score)) {
+        if (formatScore() == score) {
             return formatScore()
         } else {
             println("This case does not match: ${formatScore()} vs $score")
