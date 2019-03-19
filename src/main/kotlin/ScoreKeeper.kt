@@ -10,40 +10,7 @@ open class ScoreKeeper private constructor(val teamA: Scoreable, val teamB: Scor
         fun using(teamA: Scoreable, teamB: Scoreable): ScoreKeeper {
             return ScoreKeeper(teamA, teamB)
         }
-    }
 
-    class Score(i: Int) : Scoreable {
-        private data class ScoreVO(val points: Int)
-
-        private var score: ScoreVO
-
-        init {
-            score = ScoreVO(i)
-        }
-
-        override fun one() {
-            score = score.copy(points = score.points + 1)
-        }
-
-        override fun two() {
-            score = score.copy(points = score.points + 2)
-        }
-
-        override fun three() {
-            score = score.copy(points = score.points + 3)
-        }
-
-        override fun getScore(): Int {
-            return score.points
-        }
-
-    }
-
-    interface Scoreable {
-        fun one()
-        fun two()
-        fun three()
-        fun getScore(): Int
     }
 
     fun scoreTeamA1() {
@@ -77,4 +44,38 @@ open class ScoreKeeper private constructor(val teamA: Scoreable, val teamB: Scor
     private fun formatScore(): String {
         return String.format("%03d:%03d", teamA.getScore(), teamB.getScore())
     }
+}
+
+class Score(i: Int) : Scoreable {
+    private data class ScoreVO(val points: Int)
+
+    private var score: ScoreVO
+
+    init {
+        score = ScoreVO(i)
+    }
+
+    override fun one() {
+        score = score.copy(points = score.points + 1)
+    }
+
+    override fun two() {
+        score = score.copy(points = score.points + 2)
+    }
+
+    override fun three() {
+        score = score.copy(points = score.points + 3)
+    }
+
+    override fun getScore(): Int {
+        return score.points
+    }
+
+}
+
+interface Scoreable {
+    fun one()
+    fun two()
+    fun three()
+    fun getScore(): Int
 }

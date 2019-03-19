@@ -8,8 +8,8 @@ import org.junit.Before
 import org.junit.Test
 
 class ScoreKeeperTest {
-    private lateinit var teamA: ScoreKeeper.Scoreable
-    private lateinit var teamB: ScoreKeeper.Scoreable
+    private lateinit var teamA: Scoreable
+    private lateinit var teamB: Scoreable
     private lateinit var scoreKeeper: ScoreKeeper
 
     @Before
@@ -21,7 +21,7 @@ class ScoreKeeperTest {
 
     @Test
     fun `formatting of the scores`() {
-        val scoreKeeper = ScoreKeeper.using(ScoreKeeper.Score(10), ScoreKeeper.Score(6))
+        val scoreKeeper = ScoreKeeper.using(Score(10), Score(6))
 
         assertThat(scoreKeeper.getScore()).isEqualTo("010:006")
     }
