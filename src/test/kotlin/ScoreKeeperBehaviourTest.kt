@@ -13,6 +13,13 @@ class ScoreKeeperBehaviourTest {
     }
 
     @Test
+    fun `formatting of the scores`(){
+        scoreKeeper = ScoreKeeper.using(ScoreKeeper.Scoreable(10), ScoreKeeper.Scoreable(6))
+
+        assertScoreIs(scoreKeeper, "010:006")
+    }
+
+    @Test
     fun `team A scores a single point`() {
 
         scoreKeeper.scoreTeamA1()
